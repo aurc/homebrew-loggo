@@ -5,21 +5,21 @@
 class Loggo < Formula
   desc "Rich Terminal User Interface for JSON logs"
   homepage "https://github.com/aurc/homebrew-loggo"
-  version "0.2.14"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/aurc/loggo/releases/download/v0.2.14/loggo_0.2.14_darwin_arm64.tar.gz"
-      sha256 "9e8ec87d7f589e174d76faf340f1d0963ec99af6a1a44332de13b0aef1ed8e76"
+    if Hardware::CPU.intel?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.1/loggo_0.3.1_darwin_amd64.tar.gz"
+      sha256 "32c3227281517ed7bf74adc889cd4afc5f7b49eec8422506e9d3046f1b937b66"
 
       def install
         bin.install "loggo"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.2.14/loggo_0.2.14_darwin_amd64.tar.gz"
-      sha256 "5f37b689c7581ad60d15771164dd585873a3c92e3b358404ba49af17f0e88f4e"
+    if Hardware::CPU.arm?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.1/loggo_0.3.1_darwin_arm64.tar.gz"
+      sha256 "851128b1d307014b660003243312da8a2692fa11968a6e30d91ba47ee9ab6673"
 
       def install
         bin.install "loggo"
@@ -28,17 +28,17 @@ class Loggo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.2.14/loggo_0.2.14_linux_amd64.tar.gz"
-      sha256 "01856679bed8e4f4c06ca49dcd4bc3240cd33be7d1a256152bdfa93497273f54"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.1/loggo_0.3.1_linux_arm64.tar.gz"
+      sha256 "95c27eec675abc3455ecc78c39eec8e57c9738369a3ccef9f4203ac9c126fd38"
 
       def install
         bin.install "loggo"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aurc/loggo/releases/download/v0.2.14/loggo_0.2.14_linux_arm64.tar.gz"
-      sha256 "1f45f7fc37bc210857907f1712952877c80d07b31bbafbdd45530f6f8488a7ae"
+    if Hardware::CPU.intel?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.1/loggo_0.3.1_linux_amd64.tar.gz"
+      sha256 "129afb2c2a1f993ddfeafa7bc0accda1cc01047fdf436c048f0c6ee2407f51a2"
 
       def install
         bin.install "loggo"
