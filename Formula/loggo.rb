@@ -5,21 +5,21 @@
 class Loggo < Formula
   desc "Rich Terminal User Interface for JSON logs"
   homepage "https://github.com/aurc/homebrew-loggo"
-  version "0.3.5"
+  version "0.3.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.5/loggo_0.3.5_darwin_arm64.tar.gz"
-      sha256 "755228bb1f6855adcf747982b966731e2e256f3f6b51fb6ad9aa3efb807a2786"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.6/loggo_0.3.6_darwin_arm64.tar.gz"
+      sha256 "cb84d744479d760a90aed9a2fe633fad525f1984dd57e96afe8ec7372294818c"
 
       def install
         bin.install "loggo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.5/loggo_0.3.5_darwin_amd64.tar.gz"
-      sha256 "f8016dca3b467460d87b81cd2f12d7caf0526c73965e19c80e32798e0d5859fe"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.6/loggo_0.3.6_darwin_amd64.tar.gz"
+      sha256 "0fd471bacef554343e01ce4fdfeadceff8a63168a4695723601bf5823d4d1b49"
 
       def install
         bin.install "loggo"
@@ -28,17 +28,17 @@ class Loggo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.5/loggo_0.3.5_linux_amd64.tar.gz"
-      sha256 "6e4f1a3168767f5e282bbb1a1c574b5b0fad09abedb0b0ffdc04a3ab0e38e851"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.6/loggo_0.3.6_linux_arm64.tar.gz"
+      sha256 "d7caa4df9f96a7ab5438a46fe7cbe09a79df1d5d75c7bc7c6386112ca5e06749"
 
       def install
         bin.install "loggo"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.5/loggo_0.3.5_linux_arm64.tar.gz"
-      sha256 "4a866ed889aabf984aafff1b674af985f54dd621da5d0b19be31b494dc68159a"
+    if Hardware::CPU.intel?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.6/loggo_0.3.6_linux_amd64.tar.gz"
+      sha256 "5a1ee054db7b8f02fe6b33040156155453dc01650b21dcc636c8205cfb8d57e7"
 
       def install
         bin.install "loggo"
