@@ -5,21 +5,21 @@
 class Loggo < Formula
   desc "Rich Terminal User Interface for JSON logs"
   homepage "https://github.com/aurc/homebrew-loggo"
-  version "0.3.7"
+  version "0.3.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.7/loggo_0.3.7_darwin_arm64.tar.gz"
-      sha256 "c8a195aa0da3d8319f35e5a24742638fa9ceca57ceb383888ef57ce0daf5fdee"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.8/loggo_0.3.8_darwin_arm64.tar.gz"
+      sha256 "ba1f4b9f5f20207376a807914dc34ae0c83589bc02fc0d896e6b4a0054825bcc"
 
       def install
         bin.install "loggo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.7/loggo_0.3.7_darwin_amd64.tar.gz"
-      sha256 "c16e27d9b64bce271309b8f4187f90ebf035c46b3149c44ac6dd9bbe7305b781"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.8/loggo_0.3.8_darwin_amd64.tar.gz"
+      sha256 "3cb645054235a32dc73e3ea94e15d52d3b9aff1d17489e60d919d68964ba0a8c"
 
       def install
         bin.install "loggo"
@@ -29,16 +29,16 @@ class Loggo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.7/loggo_0.3.7_linux_arm64.tar.gz"
-      sha256 "78ec102a4c832e075c0c097dad081dba0db2022f49c67df5f574ac4ab1bcddab"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.8/loggo_0.3.8_linux_arm64.tar.gz"
+      sha256 "853266425e97d71a85d8be419a3172569f4ca7a17e713c4f85054a98f68a84ae"
 
       def install
         bin.install "loggo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.7/loggo_0.3.7_linux_amd64.tar.gz"
-      sha256 "574a2de11d55ff19458b8da5df657a17f88ee79aa880590245706b5b0393ef3e"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.8/loggo_0.3.8_linux_amd64.tar.gz"
+      sha256 "feb59789d7e22719a6da7ae7d87c291e685016c6d3644bc0fada950f6660b4fb"
 
       def install
         bin.install "loggo"
