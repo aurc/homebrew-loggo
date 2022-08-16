@@ -5,21 +5,21 @@
 class Loggo < Formula
   desc "Rich Terminal User Interface for streaming structured logs"
   homepage "https://github.com/aurc/loggo"
-  version "0.3.12"
+  version "0.3.13"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.12/loggo_0.3.12_darwin_arm64.tar.gz"
-      sha256 "a6729684b01c7c420db88be477a4e42f12a84d0dffd1f225e535512ebbaed986"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.13/loggo_0.3.13_darwin_arm64.tar.gz"
+      sha256 "b83547962980bab53526a4e868ce202fa9f6ed3dbf54baeecd9b064400bc6f13"
 
       def install
         bin.install "loggo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.12/loggo_0.3.12_darwin_amd64.tar.gz"
-      sha256 "832c76b2c9930c5ace1ca5848ba5a66b805276377d8279b933090b471eedc9bc"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.13/loggo_0.3.13_darwin_amd64.tar.gz"
+      sha256 "69fff500ca614b84bc1d9a9ff2478eeb167d132ff56febf46a0e832d7e3ce1d6"
 
       def install
         bin.install "loggo"
@@ -29,16 +29,16 @@ class Loggo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.12/loggo_0.3.12_linux_arm64.tar.gz"
-      sha256 "99832494d041d7d393cf5082c9c7c4b4884dabda9d068c123709e9842f83a5a5"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.13/loggo_0.3.13_linux_arm64.tar.gz"
+      sha256 "a71455783d5f7b84d6f6c37ea5a65df1f6d370558ac9861dff44d52be0968043"
 
       def install
         bin.install "loggo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aurc/loggo/releases/download/v0.3.12/loggo_0.3.12_linux_amd64.tar.gz"
-      sha256 "05788bb1d55ddf0455bc3537bab764c106e3c613e1277a8013880a7521a50f4a"
+      url "https://github.com/aurc/loggo/releases/download/v0.3.13/loggo_0.3.13_linux_amd64.tar.gz"
+      sha256 "e8865d922b412ab8c2cbca3a6a224396a83337575abb6fd192b9e3c2d54e9b4b"
 
       def install
         bin.install "loggo"
