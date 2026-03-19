@@ -5,47 +5,41 @@
 class Loggo < Formula
   desc "Rich Terminal User Interface for streaming structured logs"
   homepage "https://github.com/aurc/loggo"
-  version "0.3.21"
+  version "0.3.22"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/aurc/loggo/releases/download/v0.3.21/loggo_0.3.21_darwin_amd64.tar.gz"
-      sha256 "051a461bd721f6684381159636008c4081ef5c8555886748deeb5d7b7d6f695d"
+    if Hardware::CPU.intel?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.22/loggo_0.3.22_darwin_amd64.tar.gz"
+      sha256 "a8d0ed5a6abd8a32417653e0ac6cdaf2333a4a3413cf368bf8564282dd7aadc0"
 
-      def install
+      define_method(:install) do
         bin.install "loggo"
       end
     end
-    on_arm do
-      url "https://github.com/aurc/loggo/releases/download/v0.3.21/loggo_0.3.21_darwin_arm64.tar.gz"
-      sha256 "3adaf8664691a96eebfaa948b2ef22fa5a4f18d08313d6b5ef7a37d7da3b11c7"
+    if Hardware::CPU.arm?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.22/loggo_0.3.22_darwin_arm64.tar.gz"
+      sha256 "deae44c30bed924d3162e8953d84176079fc9ab27c91d66bb900c671353c9007"
 
-      def install
+      define_method(:install) do
         bin.install "loggo"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/aurc/loggo/releases/download/v0.3.21/loggo_0.3.21_linux_amd64.tar.gz"
-        sha256 "536796ad8122ef0cfbbe4a23a064b6eaf1ff38151e8fcbb43da0dce2f6d4ab91"
-
-        def install
-          bin.install "loggo"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.22/loggo_0.3.22_linux_amd64.tar.gz"
+      sha256 "60741ee9abecdf607f244731e0e427957929ac947b06873ef9002ba12cb22a61"
+      define_method(:install) do
+        bin.install "loggo"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/aurc/loggo/releases/download/v0.3.21/loggo_0.3.21_linux_arm64.tar.gz"
-        sha256 "6b6e9ff0e7b8f246faab5b5ef17fd648f0f23233db5b6f616a9eaa0395b761f8"
-
-        def install
-          bin.install "loggo"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aurc/loggo/releases/download/v0.3.22/loggo_0.3.22_linux_arm64.tar.gz"
+      sha256 "2512cb68b3bcb936fa34b31967680daaa0bf9e6045a873d913380aa1563bc164"
+      define_method(:install) do
+        bin.install "loggo"
       end
     end
   end
